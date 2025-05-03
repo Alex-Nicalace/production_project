@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './Counter.scss';
+import classes from './Counter.module.scss';
 
 // type TCounterProps = { }
 function Counter(/*{ }: TCounterProps*/) {
@@ -8,9 +8,10 @@ function Counter(/*{ }: TCounterProps*/) {
   function increment() {
     setCount(count + 1);
   }
+
   return (
-    <div>
-      <p>Count: {count}</p>
+    <div className={classes.btn}>
+      <h1>Count: {count}</h1>
       <button onClick={increment}>Increment</button>
     </div>
   );
