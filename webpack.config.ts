@@ -8,6 +8,7 @@ export default (env: BuildEnv): Configuration => {
     entry: path.resolve(__dirname, 'src', 'index.tsx'), // склеивает участки пути в одну строку, __dirname - текущая директория
     build: path.resolve(__dirname, 'build'),
     html: path.resolve(__dirname, 'public', 'index.html'),
+    src: path.resolve(__dirname, 'src'),
   };
 
   const mode = env.mode || 'development';
