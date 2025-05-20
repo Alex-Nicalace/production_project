@@ -3,6 +3,7 @@ import globals from 'globals';
 import tseslint from 'typescript-eslint';
 import pluginReact from 'eslint-plugin-react';
 import { defineConfig } from 'eslint/config';
+import i18next from 'eslint-plugin-i18next';
 
 export default defineConfig([
   // Общие настройки для ВСЕХ файлов
@@ -28,6 +29,7 @@ export default defineConfig([
 
   tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
+  i18next.configs['flat/recommended'],
 
   // ТОЛЬКО TypeScript
   {

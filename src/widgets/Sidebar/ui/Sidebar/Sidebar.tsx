@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { LangSwitcher } from 'features/LangSwitcher';
 import { ThemeSwitcher } from 'features/ThemeSwitcher';
 import { classNames } from 'shared/lib';
+import { Button } from 'shared/ui';
 import cls from './Sidebar.module.scss';
 
 type SidebarProps = {
@@ -22,7 +23,7 @@ export function Sidebar({ className }: SidebarProps) {
       ])}
     >
       <div className={cls.menu}>
-        <button onClick={toggleCollapsed}>toggle</button>
+        <Button onClick={toggleCollapsed}>toggle</Button>
       </div>
       <div className={cls.switchers}>
         <ThemeSwitcher />
