@@ -1,13 +1,14 @@
 import { JSX, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { routeConfig } from './routeConfig';
+import { PageLoader } from 'shared/ui';
 
 interface AppRouterProps {
   className?: string;
 }
 function AppRouter({ className }: AppRouterProps): JSX.Element {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<PageLoader />}>
       <Routes>
         {routeConfig.map(({ path, element }) => (
           <Route
