@@ -30,6 +30,13 @@ export default defineConfig([
   tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
   i18next.configs['flat/recommended'],
+  // Только для файлов *.test.tsx
+  {
+    files: ['**/*.test.{ts,tsx}'],
+    rules: {
+      'i18next/no-literal-string': 'off',
+    },
+  },
 
   // ТОЛЬКО TypeScript
   {
