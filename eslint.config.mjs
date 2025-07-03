@@ -1,9 +1,10 @@
 import js from '@eslint/js';
+import i18next from 'eslint-plugin-i18next';
+import pluginReact from 'eslint-plugin-react';
+import storybook from 'eslint-plugin-storybook';
+import { defineConfig } from 'eslint/config';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
-import pluginReact from 'eslint-plugin-react';
-import { defineConfig } from 'eslint/config';
-import i18next from 'eslint-plugin-i18next';
 
 export default defineConfig([
   // Общие настройки для ВСЕХ файлов
@@ -30,6 +31,7 @@ export default defineConfig([
   tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
   i18next.configs['flat/recommended'],
+  storybook.configs['flat/recommended'],
   // Только для файлов *.test.tsx
   {
     files: ['**/*.test.{ts,tsx}'],
