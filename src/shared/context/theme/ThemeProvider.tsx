@@ -4,9 +4,12 @@ import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from './ThemeContext';
 const defaultTheme =
   (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT;
 
-type TThemeProviderProps = { children: JSX.Element };
-function ThemeProvider({ children }: TThemeProviderProps): JSX.Element {
-  const [theme, setTheme] = useState<Theme>(defaultTheme);
+type TThemeProviderProps = { children: JSX.Element; initialTheme?: Theme };
+function ThemeProvider({
+  children,
+  initialTheme,
+}: TThemeProviderProps): JSX.Element {
+  const [theme, setTheme] = useState<Theme>(initialTheme ?? defaultTheme);
 
   const toggleTheme = useCallback(
     (value?: Theme) => {
